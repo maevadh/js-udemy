@@ -51,7 +51,6 @@ sayHello('Maëva');
 // variable globale = variable déclarer avant ma function
 //                    et accessible partout dans mon code.
 // -> Eviter d'utiliser des variables globales, elles peuvent causer des problemes.
-*/
 
 let crie = "Toujours plus bas";   // Globale
 
@@ -62,3 +61,27 @@ function crieDeGuerre() {
 
 crieDeGuerre();
 console.log(crie);
+
+//___________________________________________________________________________________
+*/
+
+let numberA = 23, numberB = 7;
+
+function addition(numberOne, numberTwo) {
+
+    let result = numberOne + numberTwo;
+    // console.log(result);        // Affiche un resultat
+    return result;                 // Retourne un resultat, tout ce qui viendra apres cette ligne ne sera pas executé.
+}
+
+function division(numberOne, numberTwo) {
+
+    let result = numberOne + numberTwo;
+    // console.log(result); 
+    return result;
+}
+
+let resultaAddition = addition(numberA, numberB);
+let resultaDivision = division(numberA, numberB);
+
+console.log(resultaAddition * resultaDivision);
