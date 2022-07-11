@@ -63,19 +63,18 @@ crieDeGuerre();
 console.log(crie);
 
 //___________________________________________________________________________________
-*/
 
 let numberA = 23, numberB = 7;
 
 function addition(numberOne, numberTwo) {
-
+    
     let result = numberOne + numberTwo;
     // console.log(result);        // Affiche un resultat
     return result;                 // Retourne un resultat, tout ce qui viendra apres cette ligne ne sera pas executé.
 }
 
 function division(numberOne, numberTwo) {
-
+    
     let result = numberOne + numberTwo;
     // console.log(result); 
     return result;
@@ -85,3 +84,15 @@ let resultaAddition = addition(numberA, numberB);
 let resultaDivision = division(numberA, numberB);
 
 console.log(resultaAddition * resultaDivision);
+//___________________________________________________________________________________
+*/
+
+function cuisiner(nombreDeGateaux, minutesDePreparation = 10, minutesDeCuisson = 15) {
+    let result = nombreDeGateaux * (minutesDeCuisson + minutesDePreparation);
+    return result;
+}
+
+let tempsDePreparationChocolat = cuisiner(4);
+let tempsDePreparationFraisier = cuisiner(1, 20);
+
+console.log(tempsDePreparationChocolat + tempsDePreparationFraisier);
