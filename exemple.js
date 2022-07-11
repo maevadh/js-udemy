@@ -1,10 +1,10 @@
 /* 
 //                          Section 4 : Les Variables 
 
-const prenom    = "Maëva";
-const nom       = "Duhamel"
+const firstName    = "Maëva";
+const name         = "Duhamel"
 
-//console.log('Bonjour ' + prenom + ' ' + nom + ' !');
+//console.log('Bonjour ' + firstName + ' ' + name + ' !');
 
 //___________________________________________________________________________________
 
@@ -18,17 +18,17 @@ console.log(result);
 //___________________________________________________________________________________
 //                          Section 5 : Boites de dialogues
 
-if(confirm('Souhaitez-vous confirmer ?')) {
-    // oui
+if(confirm('Do you want to confirm ?')) {
+    // yes
     alert('Ok')
 } else {
-    // non
-    alert('Annulation')
+    // no
+    alert('cancelation')
 }
 
 //___________________________________________________________________________________
-const age = prompt("Entrez votre age :");
-console.log("Bonjour, vous avez " + age + " ans");
+const age = prompt("Enter you age :");
+console.log("Hello, you are " + age + " years old");
 
 //___________________________________________________________________________________
 //                          Section 6 : function
@@ -39,10 +39,10 @@ function sayHello() {
 sayHello();
 
 function sayHello(name) {
-    alert('Bonjour ' + name);
+    alert('Hello ' + name);
 }
 
-sayHello('Maëva');
+sayHello('Maeva');
 
 //___________________________________________________________________________________
 //                          Section 7 : les variables locale/globale
@@ -54,13 +54,13 @@ sayHello('Maëva');
 
 let crie = "Toujours plus bas";   // Globale
 
-function crieDeGuerre() {
-    let crie = "Toujours plus fort !";  //Variable locale
-    console.log(crie);
+function battleCry() {
+    let cry = "Toujours plus fort !";  //Variable locale
+    console.log(cry);
 }
 
-crieDeGuerre();
-console.log(crie);
+battleCry();
+console.log(cry);
 
 //___________________________________________________________________________________
 
@@ -86,24 +86,24 @@ let resultaDivision = division(numberA, numberB);
 console.log(resultaAddition * resultaDivision);
 //___________________________________________________________________________________
 
-function cuisiner(nombreDeGateaux, minutesDePreparation = 10, minutesDeCuisson = 15) {
-    let result = nombreDeGateaux * (minutesDeCuisson + minutesDePreparation);
+function cooking(numberOfCakes, minutesOfPreparation = 10, cookingminutes = 15) {
+    let result = numberOfCakes * (cookingminutes + minutesOfPreparation);
     return result;
 }
 
-let tempsDePreparationChocolat = cuisiner(4);
-let tempsDePreparationFraisier = cuisiner(1, 20);
+let ChocolatePreparationTime = cooking(4);
+let StrawberryPreparationTime = cooking(1, 20);
 
-console.log(tempsDePreparationChocolat + tempsDePreparationFraisier);
+console.log(ChocolatePreparationTime + StrawberryPreparationTime);
 //___________________________________________________________________________________
 
-function demanderAge() {
+function askAge() {
     
-    const age = prompt('Entrez votre age :');
-    alert('Vous avez ' + age + ' ans');
+    const age = prompt('Enter your age :');
+    alert('You are ' + age + ' years old');
     
 }
-demanderAge();
+askAge();
 
 // NE PAS OUBLIER D'APPELER MA FUNCTION POUR QU'ELLE FONCTIONNE...
 
@@ -112,51 +112,52 @@ demanderAge();
 
 function futurAge() {
     
-    let age = prompt("Entrez votre age : ");
+    let age = prompt("Enter your age : ");
     
-    age = Number(age);              // Solution #1. La plus recommandée.
+        age = Number(age);           // Solution #1. La plus recommandée.
     //  age = parseInt(age);        // Solution #2. Convertir (en nombre entier) une chaine de caractère en nombre.
-    //  age = parseFloat(age);      // Solution #3. Va créer un nombre à virgule.
+    //  age = parseFloat(age);     // Solution #3. Va créer un nombre à virgule.
     
-    //  nombreEnString = nombre.toString();     // Solution #1. Convertir un nombre en string.
-    alert("Bientot vous aurez " + (age + 1) + " ans");
+    //  numberToString = nombre.toString();     // Solution #1. Convertir un nombre en string.
+    alert("Soon you will be " + (age + 1) + " years old");
     
 }
 
 futurAge();
+
 //___________________________________________________________________________________
 //                          Les functions anonymes
 //          Façon #1 d'appeler une function anonyme
 
 let functionAnonyme = function() {
-    console.log('Je suis une function anonyme');
+    console.log('I am an anonymous function');
 }
 
 functionAnonyme();
 
 //          Façon #2 : l'auto-executer.
 
-( function() {console.log('Je suis aussi une function anonyme')} ) ();
+( function() {console.log('I am also an anonymous function')} ) ();
 
 //___________________________________________________________________________________
 //                          Exercice
-function voyager(nombreAdultes = 0, nombreEnfants = 0, classe = "Economique") {
+function travel(adultsNomber = 0, childrensNumber = 0, class = "Economic") {
     
-    let montant = 0;
+    let amount = 0;
     
-    if (classe == "Economique") {
-        montant = nombreAdultes * 450 + nombreEnfants * 100;
-    } else if (classe == "Business") {
-        montant = nombreAdultes * 950 + nombreEnfants * 400;
+    if (class == "Economic") {
+        amount = adultsNomber * 450 + childrensNumber * 100;
+    } else if (class == "Business") {
+        amount = adultsNomber * 950 + childrensNumber * 400;
     } else {
-        montant = nombreAdultes * 1450 + nombreEnfants * 1000;
+        amount = adultsNomber * 1450 + childrensNumber * 1000;
     }
     
-    console.log("Bonjour ! Bienvenue à bord. Voici le montant à payer : " + montant + " euros.");
+    console.log("Good morning ! Welcome aboard. Here is the amount to pay: " + amount + " euros");
     
 }
 
-voyager(2, 1, "Premiere");
+travel(2, 1, "firstClass");
 
 //___________________________________________________________________________________
 //                          Exercice abracadabra
@@ -178,38 +179,92 @@ function abracadabra() {
 
 abracadabra();
 //___________________________________________________________________________________
-//                         #1. Exercice Calculateur d'IMC       
+//                         #1. Exercise BMI Calculator 
 
 
-function calculerIMC (poids, taille) {  
+function calculateBMI (weight, height) {  
     
-    let tailleEnMetres  = taille / 100;
-    let tailleCalculee  = Math.pow(tailleEnMetres, 2);        // = tailleEnMetres * tailleEnMetres;
-    let result          = poids / tailleCalculee;
+    let sizeInMeters  = height / 100;
+    let calculatedSize  = Math.pow(sizeInMeters, 2);        // = sizeInMeters * sizeInMeters;
+    let result          = weight / calculatedSize;
     
     return result;
     
 }
 
-let poids   = prompt("Quel est ton poids ? (en kg)");
-let taille  = prompt("Quel est ta taille ? (en cm)");
+let weight   = prompt("What is your weight? (en kg)");
+let height  = prompt("What is your size? (en cm)");
 
-alert(calculerIMC(poids, taille));
-
-
-//                         #2. Exercice Calculateur d'IMC code simplifié
+alert(calculateBMI(weight, height));
 
 
-function calculerIMC (poids, taille) {  
+//                         #2. Exercise BMI calculator simplified code
+
+
+function calculateBMI (Weight, height) {  
     
-    return poids / Math.pow((taille/100), 2);
+    return weight / Math.pow((size/100), 2);
     
 }
 
-let poids   = prompt("Quel est ton poids ? (en kg)");
-let taille  = prompt("Quel est ta taille ? (en cm)");
+let weight   = prompt("What is your weight? (kg)");
+let height  = prompt("What is your size? (cm)");
 
-alert(calculerIMC(poids, taille));
-*/
+alert(calculateBMI(weight, height));
 
 //___________________________________________________________________________________
+//                          conditions
+//  true/false.
+// Pour qu'une condition soit executée il faut qu'elle soit "true"
+
+// ==   ===    !==    !===  <   >   <=  >=  
+
+let heure = 20;
+
+if (heure < 12) {
+    console.log("It's almost noon");
+} else if (heure < 18) {
+    console.log("It's the afternoon");
+} else {
+    console.log("it's evening");
+}
+
+//___________________________________________________________________________________
+//                          check user age
+
+let age = 30;
+
+if (age < 18) {
+    console.log("you are not of legal age");
+} else if (age <= 20) {
+    console.log("you are of legal age");
+} else {
+    console.log("you are of legal age everywhere, the casinos are yours!");
+}
+
+//___________________________________________________________________________________
+//                          switch
+// ochio ! le ; ne se place QUE au console.log() et break.
+
+*/
+let consumable = "chocolate";
+
+switch(consumable) {
+
+    case "zucchini":
+    case "carrot":
+    case "potato":
+        console.log("This is a vegetable");
+        break;
+    case "banana":
+    case "mango":
+        console.log("This is a fruit");
+        break;
+
+    default: 
+        console.log("This is neither a fruit, nor a vegetable.");
+    
+}
+
+//___________________________________________________________________________________
+//
