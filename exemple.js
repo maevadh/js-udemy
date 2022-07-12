@@ -179,7 +179,7 @@ function abracadabra() {
 
 abracadabra();
 //___________________________________________________________________________________
-//                         #1. Exercise BMI Calculator 
+//                         #1.1 Exercise BMI Calculator 
 
 
 function calculateBMI (weight, height) {  
@@ -198,7 +198,7 @@ let height  = prompt("What is your size? (en cm)");
 alert(calculateBMI(weight, height));
 
 
-//                         #2. Exercise BMI calculator simplified code
+//                         #1.2 Exercise BMI calculator simplified code
 
 
 function calculateBMI (Weight, height) {  
@@ -308,6 +308,112 @@ if ((departureStation != "" && arrivalStation != "")) {
 }
 
 //___________________________________________________________________________________
-//                          #44. Les boucles
-*/
+//                          #44/45. Les boucles
 
+// Une boucle sert a faire des operations tant que ma condition est "true"
+
+// OCHIO !!!!!, les boucles peuvent faire planter mon ordi ! (boucles infinies)
+
+let i = 1;
+
+while (i < 5) {
+    console.log('Line : ' + i);
+    i++;
+}
+
+//___________________________________________________________________________________
+//                        #46
+let name1;
+
+do {
+    
+    name1 = prompt('What is your name ?');
+    
+} while (name1 == "" ||  name1 == null);
+
+alert('Hello ' + name1);
+
+//___________________________________________________________________________________
+
+do {
+    
+    var name1 = prompt('What is your name ?');
+    
+} while(name1 == "" ||  name1 == null)
+
+alert('Hello ' + name1);
+
+//___________________________________________________________________________________
+//                          #47
+for (let i = 1; i  < 5; i++) {
+    console.log('Line : ' + i);
+    
+}
+
+//                          #49. Casser la boucles : break/continue
+// Break
+
+let i = 0;
+
+while (i < 5) {
+    if (i == 3) {
+        break;
+    }
+    console.log("Line : " + i);
+    i++
+}
+
+// Continue (s'utilise rarement)
+
+let i = 0;
+
+while (i < 5) {
+    if (i == 3) {
+        i++             // a bien preciser ici le i++ sinon boucles infinies...
+        continue;
+    }
+    console.log("Line : " + i);
+    i++
+}
+
+
+//___________________________________________________________________________________
+//                          #50. Gerer les exceptions
+// Si je veux afficher des messages d'erreur personnalisables aux users
+// mais sans utiliser de pop up
+
+
+try {
+  // Erreur ?
+    let recompense = prompt("Choisissez une récompense : épée, arc, haches");
+    let degats;
+
+switch (recompense) {
+    case "épée":
+        degats = 40;
+        break;
+    case "arc":
+        degats = 30;
+        break;
+    case "haches":
+        degats = 20;
+        break;
+    default:
+        throw new Error("Vous ne pouvez pas tricher.");
+    }
+
+    alert("Vous avez choisi : " + recompense + " (" + degats + " dégats).");
+} 
+catch (error) {
+  // Erreur !
+    alert(error);
+} finally {
+    alert("Fin du programme");
+}
+
+// finally s'utilise rarement
+// sauf si je veux qu'une operation soit executer imperativement a chaque fois
+
+//___________________________________________________________________________________
+// 
+*/
