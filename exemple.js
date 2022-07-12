@@ -243,11 +243,11 @@ if (age < 18) {
 }
 
 //___________________________________________________________________________________
-//                          switch
+//                          #40 . switch
 // ochio ! le ; ne se place QUE au console.log() et break.
 
-*/
-let consumable = "chocolate";
+
+let consumable  = "chocolate";
 
 switch(consumable) {
 
@@ -267,4 +267,47 @@ switch(consumable) {
 }
 
 //___________________________________________________________________________________
-//
+//                          #41 . Verifier plusieurs conditions
+
+//                && eperluette          || double pipe
+let departureStation    = "Paris";
+let arrivalStation      = "Monaco";
+let driver              = ""
+
+if ((departureStation != "" && arrivalStation != "") && driver != "") {
+    console.log('The train is about to start');
+} else {
+    console.log('The train cannot start');
+}
+
+//___________________________________________________________________________________
+//                          #43. Les conditions ternaires
+
+// CONDITION ? TRUE : FALSE;
+
+
+let x = 23;
+x < 7 ? console.log("is less than three") : console.log("x is greater than three");
+
+
+let departureStation    = "Paris";
+let arrivalStation      = "Monaco";
+let driver              = "Maëva";
+
+driver != "" && arrivalStation != "" ? console.log("The train is about to start") : console.log('The train cannot start');
+//___________________________________________________________________________________
+
+let departureStation    = "Paris";
+let arrivalStation      = prompt("Where do you want to go?") || "gare de Nice"; //gare de Nice sera une gare par defaul si l'user ne communique pas de nom de gare.
+let driver              = ""
+
+if ((departureStation != "" && arrivalStation != "")) {
+    alert('The train is about to start to ' + arrivalStation + '.');
+} else {
+    alert('The train cannot start');
+}
+
+//___________________________________________________________________________________
+//                          #44. Les boucles
+*/
+
