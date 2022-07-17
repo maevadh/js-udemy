@@ -415,5 +415,116 @@ catch (error) {
 // sauf si je veux qu'une operation soit executer imperativement a chaque fois
 
 //___________________________________________________________________________________
-// 
+//                          #62. La portée des variables
+
+
+// Ne pas utiliser var, elle detruit les anciennes variables.
+let variableLet = "globale";
+var variableVar = "globale";
+
+if(true) {
+  
+  let variableLet = "locale";
+  var variableVar = "locale";
+  
+  console.log("let : " + variableLet);
+  console.log("var : " + variableVar);
+  
+}
+
+console.log("let : " + variableLet);
+console.log("var : " + variableVar);
+
+
+function timer(secondes) { // 10
+    
+    if(secondes > 0) {
+        console.log(secondes);
+        timer(secondes - 1); // 9
+
+            // afficher 9
+            // timer(8)
+
+                // afficher 8
+                // timer(7)
+
+                    // ...
+    }
+    else {
+        console.log(0);
+    }
+
+}
+
+timer(10);
+
+
+
+//___________________________________________________________________________________
+//                                      Les tableaux
+
+
+//                          Tableau en 2D
+
+let myArray2D = [
+    ['Mark', 'Jeff', 'Bill'],
+    ['Zuckerberg', 'Bezos', 'Gates']      // La derniere ligne n'a pas de virgule a la fin
+];
+
+//                            Les tableaux associatif //Associer des noms aux elements
+
+let monTableauAssociatif = { 
+    'firstName' : 'Mark',
+    'lastName'  : 'Zuckerberg',
+    'job'       : 'Facebook CEO'
+};
+
+monTableauAssociatif['nationality'] = 'American';
+// console.log(monTableauAssociatif['job']);
+console.log(monTableauAssociatif) 
+
+
+join Array to String
+
+let myArray = ['Mark', 'Jeff', 'Bill'];
+
+console.log(myArray.join(' '));
+
+
+
+// .shift()     supprime le premier élément d'un tableau
+// .pop()       supprime le dernier élément d'un tableau
+// .unshift()   ajoute un ou plusieurs éléments au début d'un tableau
+// .push()      ajoute un ou plusieurs éléments à la fin d'un tableau  
+
+// .delete()    supprimer un element d'un tableau associatif.
+
+//indexOf('la valeur dans mon tableau')
+// .join()      Transforme un Array en String
+// .splice()    retirer, remplacer et ajouter des elements pour un tableau simple et a multidimension (pas dispo pour les tableaux associatifs)
+
+
+//___________________________________________________________________________________
+//                          Les boucles for...in
+
+let panier = ['banana', 'apple', 'peach'];
+
+for (const fruit in panier) {
+    panier[fruit] = 'pomme;'
+}
+console.log(panier);
+
+                            for...Of (la + utilisé maintenant)
+
+let panier = ['banana', 'apple', 'peach'];
+
+for (const fruit of panier) {
+    console.log(fruit);
+}
+
+
+                            difference for...in, for...of
+
+La boucle for...in renvoit dans sa variable l'index de l'element.
+La boucle for...of renvoit dans sa variable  la valeur de l'element.
 */
