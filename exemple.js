@@ -527,4 +527,63 @@ for (const fruit of panier) {
 
 La boucle for...in renvoit dans sa variable l'index de l'element.
 La boucle for...of renvoit dans sa variable  la valeur de l'element.
+
+//___________________________________________________________________________________
+//                          Les function flechées
+
+Ancienne version :
+
+let myFunction = function() {
+    console.log('test');
+}
+
+
+Nouvelle version plus rapide :
+
+let myFunction = () => console.log('test');
+myFunction();
+
+//___________________________________________________________________________________
+//                          Closure (les fermetures)
+
+
+-> but d'une closure : sauvegarder les variables locales d'une function.
+
+function bonjour(prenom) {
+  
+let resultat = "Bonjour " + prenom; // Variable locale
+let maClosure = () => console.log(resultat);
+return maClosure;
+  
+}
+
+function bonjour_bis(prenom) {
+  
+let resultat = "Bonjour " + prenom; // Variable locale
+console.log(resultat);
+  
+}
+
+let maFonction = bonjour('Evan');
+maFonction();
+bonjour_bis('Nicolas');
+
+function timer() {
+  let secondes = 0;
+  
+  let maClosure = () => {
+    return ++secondes;
+  }
+  return maClosure;
+}
+
+let monTimer = timer();
+console.log(monTimer());
+console.log(monTimer());
+console.log(monTimer());
+
+let monDeuxiemeTimer = timer();
+console.log(monDeuxiemeTimer());
+
+console.log(monTimer());
 */
